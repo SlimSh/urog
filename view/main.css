@@ -1,0 +1,14 @@
+.wrap {
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+}
+
+  .form-auth {
+    width: 300px;
+  }
+  input {
+
+    margin: 10px 0px 5px 0px!important;
+  }

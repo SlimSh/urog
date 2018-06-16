@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- UIkit CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/css/uikit.min.css" />
+
+<!-- UIkit JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit-icons.min.js"></script>
+<link rel="stylesheet" href="main.css">
+    <title></title>
+  </head>
+  <body>
+    <div class="wrap">
+
+    <h1>Auth User</h1>
+    <form action="/auth" class="form-auth">
+      <input type="text" class="uk-input" placeholder="Email">
+      <input type="password" class="uk-input" placeholder="Password">
+      <button class="uk-button uk-button-default"> Сохранить </button>
+    </form>
+    <h3>Users</h3>
+    <ul>
+      <li></li>
+    </ul>
+  </div>
+
+    <script type="text/javascript">
+    fetch('/user')
+      .then(function(response) {
+        // alert(response.headers.get('Content-Type')); // application/json; charset=utf-8
+        // alert(response.status); // 200
+
+        return response.json();
+       })
+      .then(function(data) {
+        let name = document.querySelector('.uk-comment-title')
+        let age = document.querySelector('.uk-subnav a')
+
+        name.innerHTML = data[0].name
+        age.innerHTML = data[0].age
+
+      })
+      .catch( console.log('err') );
+    </script>
+  </body>
+</html>

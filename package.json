@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "bcrypt": "^2.0.1",
     "cheerio": "^1.0.0-rc.2",
     "crypto": "^1.0.1",
     "jsonwebtoken": "^8.2.0",
@@ -36,6 +37,7 @@
     "koa-logger": "^3.2.0",
     "koa-mongo": "^1.3.0",
     "koa-mongo-db": "^2.0.2",
+    "koa-mongoose": "^2.0.0",
     "koa-passport": "^4.0.1",
     "koa-static": "^4.0.3",
     "passport": "^0.4.0",

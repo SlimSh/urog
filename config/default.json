@@ -1,6 +1,6 @@
 {
   "port": 5004,
-  "mongodb": "mongodb://Dslimsh:dfkmrbhbz87@ds147905.mlab.com:47905/seo_helper",
+  "db": "mongodb://Dslimsh:dfkmrbhbz87@ds147905.mlab.com:47905/seo_helper",
   "session" : {
     "secret": "dfkmrbhbz",
     "config": {

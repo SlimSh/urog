@@ -14,33 +14,39 @@
   <body>
     <div class="wrap">
 
-    <h1>Auth User</h1>
-    <form action="/auth" class="form-auth">
-      <input type="text" class="uk-input" placeholder="Email">
-      <input type="password" class="uk-input" placeholder="Password">
-      <button class="uk-button uk-button-default"> Сохранить </button>
+    <h1>Add User</h1>
+    <form action="/user/add" class="form-auth" method="post">
+      <input type="text" class="uk-input username" placeholder="Username" name="username">
+      <input type="text" class="uk-input age" placeholder="Age" name="age">
+      <input type="text" class="uk-input email" placeholder="Email" name="email">
+      <input type="password" class="uk-input password" placeholder="password" name="Password">
+      <button class="uk-button uk-button-default" type="submit"> Сохранить </button>
     </form>
     <h3>Users</h3>
-    <ul>
+    <ul id="users">
       <li></li>
     </ul>
   </div>
 
     <script type="text/javascript">
-    fetch('/user')
+    let username = document.querySelector('form .username').value;
+    let email = document.querySelector('form .email').value;
+    let age = document.querySelector('form .age').value;
+    fetch('/user',{})
       .then(function(response) {
         // alert(response.headers.get('Content-Type')); // application/json; charset=utf-8
         // alert(response.status); // 200
-
+        console.log(response)
         return response.json();
        })
       .then(function(data) {
-        let name = document.querySelector('.uk-comment-title')
-        let age = document.querySelector('.uk-subnav a')
-
-        name.innerHTML = data[0].name
-        age.innerHTML = data[0].age
-
+        let users = document.getElementById("users");
+        console.log(data)
+        data.forEach(user => {
+          let li = document.createElement('li');
+          li.innerHTML = `${user.name || ''}: age ${user.age}`;
+          users.appendChild(li)
+        });
       })
       .catch( console.log('err') );
     </script>

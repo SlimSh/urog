@@ -1,4 +1,5 @@
 {
+  "JWT_SECRET": "1Bjp9ERP{o7VF`Q",
   "port": 5004,
   "db": "mongodb://Dslimsh:dfkmrbhbz87@ds147905.mlab.com:47905/seo_helper",
   "session" : {

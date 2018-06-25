@@ -1,3 +1,3 @@
 import favicon from 'koa-favicon';
 
-export default (app)=>{app.use(favicon(__dirname+'/view/favicon.ico'))};
+export default (app)=>{app.use(favicon('./view/favicon.ico'))};

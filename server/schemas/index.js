@@ -1,4 +1,6 @@
-// import user from "./user";
-// import info from "./info";
-
-// export default [user, info]
+import User from "./user";
+import Info from "./info";
+export {
+    User,
+    Info
+}

@@ -6,5 +6,6 @@ import session from './session';
 import statics from './static';
 import dataTypes from './dataTypes';
 import db from './db';
+import jwt from './jwt';
 
-export default [errors, logger, bodyParser, favicon, session, statics, dataTypes, db];
+export default [errors, logger, bodyParser, favicon, session, statics, dataTypes, db, jwt];

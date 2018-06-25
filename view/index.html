@@ -1,14 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <!-- UIkit CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/css/uikit.min.css" />
-
-<!-- UIkit JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit-icons.min.js"></script>
-<link rel="stylesheet" href="main.css">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/build/main.css" />
+  <script href="/build/main.js"></script>
     <title></title>
   </head>
   <body>
@@ -19,8 +14,13 @@
       <input type="text" class="uk-input username" placeholder="Username" name="username">
       <input type="text" class="uk-input age" placeholder="Age" name="age">
       <input type="text" class="uk-input email" placeholder="Email" name="email">
-      <input type="password" class="uk-input password" placeholder="password" name="Password">
+      <input type="password" class="uk-input password" placeholder="password" name="password">
       <button class="uk-button uk-button-default" type="submit"> Сохранить </button>
+    </form>
+    <form action="/auth/signIn" class="form-auth" method="post">
+      <input type="text" class="uk-input email" placeholder="Email" name="email">
+      <input type="password" class="uk-input password" placeholder="password" name="password">
+      <button class="uk-button uk-button-default" type="submit"> Войти </button>
     </form>
     <h3>Users</h3>
     <ul id="users">
@@ -32,7 +32,7 @@
     let username = document.querySelector('form .username').value;
     let email = document.querySelector('form .email').value;
     let age = document.querySelector('form .age').value;
-    fetch('/user',{})
+    fetch('/users',{})
       .then(function(response) {
         // alert(response.headers.get('Content-Type')); // application/json; charset=utf-8
         // alert(response.status); // 200
@@ -44,11 +44,21 @@
         console.log(data)
         data.forEach(user => {
           let li = document.createElement('li');
-          li.innerHTML = `${user.name || ''}: age ${user.age}`;
+          li.innerHTML = `${user.name || ''}: age ${user.email}<br>${user.password}<br>${user._id}`;
           users.appendChild(li)
         });
       })
       .catch( console.log('err') );
+    fetch('auth/private', {method: 'POST'})
+    .then(function(res){
+      return res.json();
+    })
+    .then(function(data){
+      console.log(data);
+    })
+    .catch(function(err){
+      console.log(err);
+    })
     </script>
   </body>
 </html>

@@ -29,7 +29,7 @@ export class Hello extends React.Component<HelloProps, {}> {
         return Math.round(result);
     }
     render() {
-        return <h1>Вся пенсия составит {this.getPension()} Вся пенсия составит {this.mounthPension()}</h1>;
+        return <h1>...Вся пенсия составит {this.getPension()} Вся пенсия составит {this.mounthPension()}</h1>;
              
     }
 }

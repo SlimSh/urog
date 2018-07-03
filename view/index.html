@@ -3,62 +3,15 @@
   <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="/build/main.css" />
-  <script href="/build/main.js"></script>
+
     <title></title>
   </head>
   <body>
-    <div class="wrap">
 
-    <h1>Add User</h1>
-    <form action="/user/add" class="form-auth" method="post">
-      <input type="text" class="uk-input username" placeholder="Username" name="username">
-      <input type="text" class="uk-input age" placeholder="Age" name="age">
-      <input type="text" class="uk-input email" placeholder="Email" name="email">
-      <input type="password" class="uk-input password" placeholder="password" name="password">
-      <button class="uk-button uk-button-default" type="submit"> Сохранить </button>
-    </form>
-    <form action="/auth/signIn" class="form-auth" method="post">
-      <input type="text" class="uk-input email" placeholder="Email" name="email">
-      <input type="password" class="uk-input password" placeholder="password" name="password">
-      <button class="uk-button uk-button-default" type="submit"> Войти </button>
-    </form>
-    <h3>Users</h3>
-    <ul id="users">
-      <li></li>
-    </ul>
+  <div id="root">
+
   </div>
+  <script src="/build/main.js"></script>
 
-    <script type="text/javascript">
-    let username = document.querySelector('form .username').value;
-    let email = document.querySelector('form .email').value;
-    let age = document.querySelector('form .age').value;
-    fetch('/users',{})
-      .then(function(response) {
-        // alert(response.headers.get('Content-Type')); // application/json; charset=utf-8
-        // alert(response.status); // 200
-        console.log(response)
-        return response.json();
-       })
-      .then(function(data) {
-        let users = document.getElementById("users");
-        console.log(data)
-        data.forEach(user => {
-          let li = document.createElement('li');
-          li.innerHTML = `${user.name || ''}: age ${user.email}<br>${user.password}<br>${user._id}`;
-          users.appendChild(li)
-        });
-      })
-      .catch( console.log('err') );
-    fetch('auth/private', {method: 'POST'})
-    .then(function(res){
-      return res.json();
-    })
-    .then(function(data){
-      console.log(data);
-    })
-    .catch(function(err){
-      console.log(err);
-    })
-    </script>
-  </body>
+</body>
 </html>

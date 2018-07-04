@@ -1,5 +1,4 @@
 import * as React from "react";
-
 export interface HelloProps { compiler: string; framework: string; }
 
 // 'HelloProps' describes the shape of props.
@@ -30,6 +29,5 @@ export class Hello extends React.Component<HelloProps, {}> {
     }
     render() {
         return <h1>...Вся пенсия составит {this.getPension()} Вся пенсия составит {this.mounthPension()}</h1>;
-             
     }
 }

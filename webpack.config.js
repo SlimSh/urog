@@ -10,7 +10,7 @@ module.exports = {
     },
     devtool: "source-map",
     resolve: {
-      extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss', '.css']
+      extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss', '.css', '.svg', '.ttf', '.woff', '.eot', '.woff2', '.png']
     },
     module: {
       rules: [

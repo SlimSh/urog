@@ -10,6 +10,7 @@ const userSchema = new mongoose.Schema({
     name: { type: String, required: 'Name is required' },
     email: { type: String, unique: 'User with email "{VALUE}" is already exist', required: 'Email is required'  },
     phone: { type: String },
+    age: { type: Number },
     role: {type: String, default: 'user'}, // guest, user, manager, admin, superAdmin
     country: {type: String, default: 'Russia'},
     region: {type: String},

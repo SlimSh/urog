@@ -1,17 +1,21 @@
 import Koa from "koa";
 import Router from "koa-router";
-import heandlers from "./heandlers/"
-import routers from "./routers/"
+import heandlers from "./heandlers/";
+import routers from "./routers/";
 
 const app = new Koa();
-heandlers.forEach(heandler=>{heandler(app)});
+heandlers.forEach(heandler => {
+  heandler(app);
+});
 
 // default Router
 const router = new Router();
-routers.forEach((rout)=>{rout(router)});
+routers.forEach(rout => {
+  rout(router);
+});
 
-router.get('/', async (ctx,body) => {
-  ctx.body = 'Hellow world';
+router.get("/", async (ctx, body) => {
+  ctx.body = "Hellow world";
 });
 
 // app

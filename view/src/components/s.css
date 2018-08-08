@@ -1,0 +1,8 @@
+.visible {
+    border: red solid 4px;
+    visibility: visible;
+}
+img, p {
+    visibility: hidden;
+    transition: all 1s;
+}

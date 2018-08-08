@@ -1,7 +1,10 @@
+import Router from 'koa-router';
+import userController from './controllers/user-controller';
+
 export default (router)=>{    
-    router.get('/user', async (ctx,body) => {
-         let result = await ctx.db.collection('users').find();        
-        ctx.type = 'JSON';
-        ctx.body = result;
-      } )
-    }
+    const routerUser = new Router({prefix: '/users'});
+    routerUser.get('/all', userController.getAll)
+              .post('/remove', userController.removeUser)
+              .post('/add', userController.addUser);
+    router.use(routerUser.routes());
+};

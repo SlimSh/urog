@@ -60,7 +60,7 @@ export default class App extends React.Component<{},{users: any, user: any}> {
     render(){
         return (
             <div>
-             <h1>Application</h1>
+             <h1>Urogai</h1>
              <ul>
                  {this.renderUsers()}
              </ul>

@@ -1,4 +1,4 @@
-import { IValidateForm } from './IForm.d';
+import { IValidateForm } from './IForm';
 export default function validate(val: any, rules: IValidateForm) {
         for (const key in rules) {
             switch (key) {

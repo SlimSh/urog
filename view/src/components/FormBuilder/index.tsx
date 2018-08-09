@@ -93,7 +93,7 @@ export default class FormBuilder extends React.Component<IFormProps, IFormState>
 
   render() {
     return (
-      <Form>
+      <Form className={this.props.className}>
         {this.renderFormData(this.props.data)}
       </Form>
     );

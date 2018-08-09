@@ -55,11 +55,6 @@ export default class UsersList extends React.Component<any, any> {
     this.renderView();
   }
 
-import AvatarAgent from 'src_ts/core/controllers/AvatarAgent'; 
-agentAvatar: <AvatarAgent 
-memberId={agent['agent_id']} 
-key={`agent_${agent['agent_id']}`} 
-/>, 
   render() {
     return (
       <div>

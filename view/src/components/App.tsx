@@ -3,11 +3,13 @@ import { getAllUsers, removeUser, signUp } from '../rest/user';
 import User from './User';
 import FormBuilder from './FormBuilder';
 import {addUserForm, SignIn} from '../forms/User';
-
+import * as style from './App.scss';
 export default class App extends React.Component<{},{users: any, user: any}> {
     public users: any;
  
     constructor(props: any) {
+
+
         super(props);
         this.state = {
             users: [],
@@ -32,7 +34,7 @@ export default class App extends React.Component<{},{users: any, user: any}> {
         let userElement = this.state.users.map((user: any) => {
             const {name, age, email} = user;
             return <li key={user._id}>
-                     <User user = {user} deleteUser = {this.deleteUser}/>
+                     <User user = {user} deleteUser = {this.deleteUser} />
                    </li>
         });
         return userElement;
@@ -58,13 +60,14 @@ export default class App extends React.Component<{},{users: any, user: any}> {
     }
 
     render(){
+        console.log(style)
         return (
             <div>
-             <h1>Application</h1>
+             <h1 className={style.headerTitle}>Application</h1>
              <ul>
                  {this.renderUsers()}
              </ul>
-                <FormBuilder {...addUserForm(this.addUser)}/>
+                <FormBuilder {...addUserForm(this.addUser)} className={style.listBg}/>
                 <FormBuilder {...SignIn(this.addUser)}/>
             </div>
         )

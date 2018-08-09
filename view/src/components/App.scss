@@ -1,0 +1,15 @@
+
+.headerTitle {
+    background: red;
+    color: white;
+    &:hover {
+        background: black;
+    }
+}
+
+.listBg {
+    background: green;
+    li {
+        border: white solid 1px;
+    }
+}

@@ -1,0 +1,21 @@
+@import "./../../assets/scss/color.scss";
+
+body {
+    background: $bg;
+    color: $bg-ultra-light;
+}
+.headerTitle {
+    // color: white;
+    color: red;
+}
+
+.listBg {
+    li {
+        border: $bg solid 1px;
+    }
+}
+.appWrapper {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-auto-rows: minmax(100vh,auto);
+}

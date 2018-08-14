@@ -1,0 +1,16 @@
+@import "./../../assets/scss/color.scss";
+
+.ignUSidebar {
+    width:261px;
+    height: 100vh;
+    padding: 20px;
+    position: fixed;
+    background:$bg-ultra-dark;
+}
+
+.logoComponent {
+    margin-top: 12px;
+}
+.categoryList {
+    margin-top: 65px;
+}

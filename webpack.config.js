@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-  entry: './view/src/app.tsx',
+  entry: __dirname+'/view/src/app.tsx',
   mode: 'development',
   output: {
     path: path.resolve(__dirname, 'view/build'),
@@ -46,10 +46,6 @@ module.exports = {
             }
           },
           'sass-loader',
-
-
-
-
         ]
       },
       {

@@ -1,15 +1,12 @@
 import * as React from "react";
 import Button from '../../UI/Button';
+import ButtonList from '../../UI/ButtonList';
 
 export default function(props: any) {
- const categories = [
-     'Запчасти',
-     'Культуры',
-     'Техника'
- ]
+
   return (
     <div className={`${props.className}`}>
-        {categories.map((category, k) => <Button key={k} title={category} />)}
+
     </div>
   );
 }
